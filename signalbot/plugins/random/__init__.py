@@ -8,7 +8,7 @@ class RandomPlugin(PluginChat):
 
     def triagemessage(self, message):
 
-        if message.text not in  ['/bot diceroll', '/bot 🎲']:
+        if message.text.lower() not in  ['/bot diceroll', '/bot 🎲']:
             return
 
         name = message.sender
