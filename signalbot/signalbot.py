@@ -142,7 +142,7 @@ class Signalbot(object):
 
         if self._config['bus'] == 'session' or self._config['bus'] is None:
             self._bus = SessionBus()
-        elif self.args.bus == 'system':
+        elif self._config['bus'] == 'system':
             self._bus = SystemBus()
         else:
             self._bus = connect(self._config['bus'])
