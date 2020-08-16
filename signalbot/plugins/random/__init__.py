@@ -8,12 +8,13 @@ class RandomPlugin(PluginChat):
 
     def triagemessage(self, message):
 
-        if message.text.lower() not in  ['/bot diceroll', '/bot 🎲']:
-            return
-
         name = message.sender
         if name in self.name_map:
             name = self.name_map[name]
+
+        if message.text.lower() not in ['/bot diceroll', '/bot 🎲']:
+            self.reply(name + ' is chatting shit: ' + message.text)
+            return
 
         number = randint(1,6)
 
