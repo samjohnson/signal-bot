@@ -22,7 +22,6 @@ class RandomPlugin(PluginChat):
             name = self.name_map[name]
 
         if message.text.lower() not in ['/bot diceroll', '/bot 🎲']:
-            self.reply(name + ' is chatting shit: ' + message.text)
             return
 
         number = randint(1,6)
