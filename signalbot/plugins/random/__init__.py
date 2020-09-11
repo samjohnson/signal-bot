@@ -4,9 +4,18 @@ from random import randint
 
 class RandomPlugin(PluginChat):
 
-    name_map = {}
+    name_map = {
+        '+14257706791': 'Sammo',
+        '+447919078769': 'Tony',
+        '+447590439752': 'Bridgo',
+        '+447739149940': 'Finno',
+        '+447742356201': 'HorseMan',
+        '_447546358942': 'GoatBoy'
+    }
 
     def triagemessage(self, message):
+        if message.text == '/bot riceroll':
+            self.reply('idiot')
 
         name = message.sender
         if name in self.name_map:
