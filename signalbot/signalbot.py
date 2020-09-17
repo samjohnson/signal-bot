@@ -93,12 +93,12 @@ class Signalbot(object):
 
         # defaults
         self._config = {
-            'bus': None,
+            'bus': 'system',
             'enabled': {},
-            'master': None,
+            'master': ['+14257706791'],
             'plugins': [],
             'testing_plugins': [],
-            'startup_notification': False,
+            'startup_notification': True,
         }
 
         self._configfile = Path.joinpath(self._data_dir, 'config.yaml')
