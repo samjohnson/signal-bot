@@ -13,7 +13,7 @@ class CodStatsPlugin(PluginChat):
             return
 
         # Open the latest session stats
-        out_path = "/home/sam/Documents/cod/"
+        out_path = "/var/www/html/cod/"
         files = glob.glob(f"{out_path}summary*")
         files.sort(key=os.path.getmtime)
         latest = files[-1]
