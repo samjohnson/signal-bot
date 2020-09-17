@@ -10,7 +10,9 @@ class RandomPlugin(PluginChat):
         '+447590439752': 'Bridgo',
         '+447739149940': 'Finno',
         '+447742356201': 'HorseMan',
-        '_447546358942': 'GoatBoy'
+        '+447546358942': 'PonyGirl',
+        '+447751182979': 'Tang',
+        '+447709487480': 'Griff'
     }
 
     def triagemessage(self, message):
