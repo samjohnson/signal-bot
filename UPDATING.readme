@@ -1,0 +1,5 @@
+pull the repo
+connect to the right screen (screen -r ...)
+ctrl-c
+sudo python3 setup.py install;signal-bot
+
