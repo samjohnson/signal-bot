@@ -9,8 +9,13 @@ import csv
 class CodStatsPlugin(PluginChat):
 
     def triagemessage(self, message):
-        if message.text not in  ['/cod session']:
+        if message.text not in  ['/cod session', '/cod compute']:
             return
+
+        if message.text == '/cod compute':
+            # Compute the stats first
+            self.reply("Computing stats, please wait and don't call /cod compute again else bad things might happen TODO;BUGBUG")
+            os.system("python3 /home/signalbot/cod_stats/warzone_stats.py")
 
         # Open the latest session stats
         out_path = "/var/www/html/cod/"
