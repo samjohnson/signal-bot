@@ -9,7 +9,7 @@ import csv
 class CodStatsPlugin(PluginChat):
 
     def triagemessage(self, message):
-        if message.text not in  ['/cod session', '/cod compute']:
+        if message.text not in  ['/cod session', '/cod compute', '/cod recent', '/cod rolling', '/cod stats']:
             return
 
         if message.text == '/cod compute':
@@ -17,9 +17,17 @@ class CodStatsPlugin(PluginChat):
             self.reply("Computing stats, please wait and don't call /cod compute again else bad things might happen TODO;BUGBUG")
             os.system("python3 /home/signalbot/cod_stats/warzone_stats.py")
 
+        # Check if rolling
+        rolling = False
+        if message.text in ['/cod recent', '/cod rolling']:
+            rolling = True
+
         # Open the latest session stats
         out_path = "/var/www/html/cod/"
-        files = glob.glob(f"{out_path}summary*")
+        if rolling:
+            files = glob.glob(f"{out_path}rolling_summary-*")
+        else:
+            files = glob.glob(f"{out_path}summary-*")
         files.sort(key=os.path.getmtime)
         latest = files[-1]
 
